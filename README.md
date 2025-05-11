@@ -1,7 +1,1 @@
-Final Project in WS101 
-    Group CARE BSIT 1C
-        Members: 
-Charmaine T. Soriano,
-Andrea R. Villarba,
-Raven G. Thong,
-Elaine B. Calma.
+https://github.com/BabySharkniSky/Final-Project-in-WS101-Salangi/blob/main/CODE%202%20FINAL%20PROJECT.html
