@@ -5,384 +5,360 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salangi Tamu Resort and Events</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Cormorant+Garamond:wght@400&family=Inter:wght@200&display=swap">
-    <style>
-        :root {
-            --primary-color: #1b3228;
-            --secondary-color: #ebe9d9;
-            --third-color: #063658;
-            --fourth-color: rgba(204, 180, 44, 0.904);
-            --accent-color: #343a40;
-            --footer-color: #061d2c;
-            --footer-text-color: #f4f1eb;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background: linear-gradient(to bottom, #F8F4E3, #EAE7DC, #D6D3D1);
-            font-family: "Cormorant Garamond", serif;
-            letter-spacing: 0.18px;
-        }
-        .main-container {
-            max-width: 1425px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        header {
-            position: relative;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
-        h1, h2, h3 {
-            font-family: "Cinzel", serif;
-        }
-
-        .navbar, .mission-content p {
-            font-family: "Inter", sans-serif;
-        }
-
-        .main-container {
-            max-width: 1425px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px;
-            background-color: var(--header-color);
-       
-            
-        }
-
-        .logo-container {
-            flex: 1;
-            text-align: left;
-
-        }
-
-        .logo-container img {
-            width: 120px;
-            height: 120px;  
-            object-fit: cover;   
-            border-radius: 70%;  
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-        .navbar, .mission-content p {
-          font-family: "Inter", sans-serif;
-        }
-
-        .nav-left {
-            display: flex;
-            gap: 25px;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        }
-
-        .navbar a {
-            font-size: 15px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .navbar a:hover {
-            color: var(--fourth-color);
-            transform: scale(1.08); 
-        }
-        .hero-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 600px;      
-          margin-top: -70px;  
-          overflow: hidden;    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+:root {
+    --primary-color: #1b3228;
+    --secondary-color: #ebe9d9;
+    --third-color: #063658;
+    --fourth-color: rgba(204, 180, 44, 0.904);
+    --accent-color: #343a40;
+    --footer-color: #061d2c;
+    --footer-text-color: #f4f1eb;
 }
 
-        .hero-image {
-          position: relative;
-          width: 1350px;      
-          height: 90%;       
-          overflow: hidden;   
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-        .hero-image .slide {
-          position: absolute;
-          top: 50%;          
-          left: 50%;          
-          width: 100%;        
-          height: 90%;       
-          object-fit: cover;  
-          transform: translate(-50%, -50%);
-          opacity: 0;
-          transition: opacity 1s ease-in-out;
-}
-
-.hero-image .slide.active {
-    opacity: 1;
-}
-
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        } 
-       
-       
-
-        #about-us {
-            padding: 20px; 
-            margin-top: -30px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: justify;
-            flex-direction: column;
-        }
-
-        #about-us h2 {
-            font-weight: 200;
-            margin-top: 30px;
-            text-align: center;
-            font-size: 32px;
-            color: var(--third-color);
-            letter-spacing: 1px;
-        }
-
-        #about-us p {
-            font-size: 21px;
-            color: var(--primary-color);
-            max-width: 600px;
-            line-height: 1.7;
-        }
-
-        .mission-content p {
-            font-weight: 200;
-            margin-bottom: 50px;
-        }
-
-        footer {
-            background-color: var(--footer-color);
-            color: var(--footer-text-color);
-            padding: 25px;
-            text-align: center;
-            font-size: 18px;
-            font-family: "Cormorant Garamond", serif;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding-top: 10px;
-            padding-bottom: 20px;
-        }
-
-        .footer-contact {
-            text-align: left;
-            width: 40%;
-            padding-left: 50px;
-        }
-
-        .footer-social {
-            text-align: left;
-            width: 40%;
-            padding-right: 50px;
-        }
-
-        .footer-extra {
-            width: 100%;
-            text-align: center;
-            padding-bottom: 10px;
-        }
-
-        footer a {
-            color: inherit; 
-            text-decoration: none; 
-        }
-
-      
-        footer a:hover {
-            text-decoration: underline;
-            color: #ffd700;
-            transition: color 0.3s ease-in-out;
-        }
-
-     
-        #scroll-top-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--third-color);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-family: "Inter", sans-serif;
-            font-size: 16px;
-            z-index: 999;
-        }
-
-        #scroll-top-btn:hover {
-            background-color: var(--primary-color);
-        }
-
-        body {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #2c2c2c;
+body {
+    background: linear-gradient(to bottom, #d6d5ce, #c2bca7, #bebcb5);
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 0.18px;
 }
 
 h1, h2, h3 {
-    font-weight: 600;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    font-family: "Cinzel", serif;
+}
+
+.navbar, .mission-content p {
+    font-family: "Inter", sans-serif;
+}
+
+#about-us {
+    padding: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
 }
 
 #about-us h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-weight: 200;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 32px;
+    color: var(--third-color);
+    letter-spacing: 1px;
 }
-.navbar a {
-    position: relative;
-    padding-bottom: 4px;
-    transition: all 0.3s ease;
+
+#about-us p {
+    font-size: 21px;
+    color: var(--primary-color);
+    max-width: 600px;
+    line-height: 1.7;
 }
-.hero-container {
-    border-radius: 15px;
+
+.mission-content p {
+    font-weight: 200;
+    margin-bottom: 50px;
+}
+
+.main-container {
+    max-width: 1425px;
+    margin: 0 auto;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.hero-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+header {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo-container {
+    flex: 1;
+    text-align: center;
+}
+
+.logo-container img {
+    width: 230px;
+    height: auto;
+    object-fit: cover;   
+    border-radius: 70%;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
-    z-index: 1;
-    pointer-events: none;
-}
-#about-us {
-    padding: 60px 20px;
-    background-color: #fdfcf9;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-}
-footer {
-    border-top: 3px solid var(--accent-color);
-    font-size: 17px;
-    letter-spacing: 0.5px;
 }
 
-.footer-contact p, .footer-social p {
-    margin: 6px 0;
+.nav-left {
+    display: flex;
+    gap: 30px;
 }
 
-footer a {
-    font-weight: 500;
-    color:white;
+.navbar a {
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
-footer a:hover {
-    color: #d6eb1f;
-    text-decoration: underline;
-}
-#scroll-top-btn {
-    background-color: var(--third-color);
-    color: white;
-    padding: 12px 18px;
-    font-weight: 600;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.navbar a:hover {
+    color: var(--fourth-color);
 }
 
-#scroll-top-btn:hover {
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
     background-color: var(--primary-color);
-    transform: translateY(-3px);
 }
-* {
-    transition: all 0.25s ease-in-out;
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    margin-top: -70px; 
 }
-</style>
-    </style>
-</head>
+
+.hero-image img {
+    width: 1300px;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+footer {
+    background-color: var(--footer-color);
+    color: var(--footer-text-color);
+    padding: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.footer-contact {
+    text-align: left;
+    width: 40%;
+    padding-left: 50px;
+}
+
+.footer-social {
+    text-align: left;
+    width: 35%;
+    padding-right: 50px;
+}
+
+.footer-extra {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+footer a {
+    color: inherit; 
+    text-decoration: none; 
+}
+
+footer a:hover {
+    text-decoration: none; 
+}
+
+@media screen and (max-width: 1440px) {
+    .main-container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .navbar {
+        gap: 15px;
+    }
+
+    .nav-left {
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .logo-container img {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .nav-left {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo-container {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .hero-container {
+        height: auto;
+        margin-top: 0;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-contact, .footer-social {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    .logo-container img {
+        width: 50px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+    footer {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+    </style>    
 <body>
-    <div class="main-container">
-        <header>
-            <nav class="navbar">
-                <div class="logo-container">
-                    <img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/437759101_872133544923939_9170558884896906801_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHH2jykKzm31eGmsjmHjAmQYefOXS-YsRhh585dL5ixGPK1the2a0P7i4AyrpCNJ_ifNiXvBcUezsLpYg77Jjlk&_nc_ohc=6SmDnF8DyW0Q7kNvwGiLgBU&_nc_oc=AdleQjXw1B5WycnMLivqsckSwBYsM7iZQlTaAP943IdZZlWLq1ZmqqLabvNLeKF1YSQ&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=SpdcyHaZVMb9GUXm5wQGWA&oh=00_AfJeeTaupAdooj1SVnwup13bWOJdIL77CGe_FBBUKtQZ_w&oe=68268CAB" alt="Company Logo" class="circle-image">
-                </div>
-                <div class="nav-left">
-                    <div class="nav-left">
-                        <a href="Salangi Resort.html">HOME</a>
-                        <a href="#about-us">ABOUT US</a>
-                        <a href="Product Listing for Final Project.html">PRODUCT LISTING</a>
-                        <a href="Featured Products Final Project code.html">FEATURED PRODUCTS</a>
-                        <a href="Gallery Final Project coding.html">GALLERY</a>
-                        <a href="FAQs Final Project code.html">FAQs</a>
-                    </div>
-            </nav>
-        </header>
-
-        <div class="hero-container">
-            <div class="hero-image img">
-                      <img class="slide active"  height="100%" width="1350px"  src="https://scontent.fmnl33-1.fna.fbcdn.net/v/t1.15752-9/487432780_657782270307926_4249988273768005478_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHSIhVPz5mXYPG0xtnNtLgsZV5azcxwSIxlXlrNzHBIjIQ-4JJSYiRDE3pNlkEI3NJ8ou_VoUil5Hx5No8_KQ9K&_nc_ohc=__45IMMWZtkQ7kNvwHdzwCo&_nc_oc=Adlg5CoXOrOCzzxxjyU9D2IFqDc9Y1ELcvEYY0-nn1Xg3wnfrlx7g8UrJRSO3vrzQ2M&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl33-1.fna&oh=03_Q7cD2AHFEOlB9sP-yrjFIOoYtn9_bkmSybQcua8raPY_HltFzA&oe=682C99BF" alt="Hero Image">
-                      <img class="slide"  height="100%" width="1350px" src="https://scontent.fmnl33-3.fna.fbcdn.net/v/t1.15752-9/480938264_1174051954301670_5033380648936210691_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE2KSa-uCT-cN3Ljzvogd3dnEJcv-RKZHycQly_5EpkfKscauOFcp-iLf6FI1W8CrmhCVhvK5183xTMsBc0V253&_nc_ohc=HJMXQ5xD71YQ7kNvwF6VPHE&_nc_oc=AdmeFXqp0sp3KLxFGknAh4bbYf-JupXF9gpp4mRe8U8bfaqyI26qUZ-zNNkqztSpC4w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl33-3.fna&oh=03_Q7cD2AGwYzZ0AGZKa_-faOuExWy3PqeUyGqIe5jcH6sgbWl0Fw&oe=682C879A" alt="Hero Image">
-                      <img class="slide"  height="100%" width="1350px" src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t1.15752-9/462578422_1986164981849523_5032958870531714902_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE7nxaleJCkfyAlj5Qb4u71wHTYFQYMTpXAdNgVBgxOlVu9NVsa121rli2_IOw4JAi7R16pB3AtZoPKchKibZoE&_nc_ohc=5EtwtM67RhgQ7kNvwE2IpPs&_nc_oc=Adkg5eyCisJnswYCTeQznqyX-yrUAM4tn1cbdfQIkc0RR2apOUBv8Wvp1lAaEDZmPyU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&oh=03_Q7cD2AGbWK3GK6JRYf866K-tUMFw5rlspiqX-ZdWoM397bOwRg&oe=682DDB16" alt="Hero Image">
-                      <img class="slide"  height="100%" width="1350px" src="https://scontent.fmnl33-6.fna.fbcdn.net/v/t1.15752-9/479696698_1345198653186398_948049453221057720_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeF20WzVHHfXaNBc8dlnHso6ashWRJxAQipqyFZEnEBCKrqKgNvNjDzePBr8r2eJ5bamyxjOer8fzrZL0NYwuzha&_nc_ohc=LZM4vw8oVHUQ7kNvwHocKYM&_nc_oc=AdkIVVvKzJUoY5VGd6jBnaRQvbq-M3TKNCgJg4AbtryTCfudsY_k24VpLW2_tsSx1fI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl33-6.fna&oh=03_Q7cD2AGQsCzBoSbCuZWRA2rYtqzsy3CVEr7mpKTswCrjVwBfgA&oe=682C9849" alt="Hero Image">
-            </div>
+    <header>
+        <button class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo-container">
+            <img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/437759101_872133544923939_9170558884896906801_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEg0VnSocMlunf6idJ_gGdYYefOXS-YsRhh585dL5ixGBTYdVKOZa4FBKoD8wG-Dn42Z5ug4DVg4biDAzawyj14&_nc_ohc=6SmDnF8DyW0Q7kNvwH50nwV&_nc_oc=AdnN3-D4W6T_jAVsiFc-YPdBdW0vX9iyBjsWpzIJu2CuYabkE6IHkp6CnJ7PE_yHAZY&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=beCNQo6v33ldX9yJVWIvSQ&oh=00_AfKassytzgyR-FoWcBZvziJKEqpG5VJfgCiawFB3MqElvQ&oe=68268CAB">
         </div>
-
-        <section id="about-us">
-            <div class="mission-content">
-                <p>Salangi Tamu Resort and Events offers a serene escape, perfect for relaxation and celebrations. Surrounded by natural beauty, it blends comfort with charm to create unforgettable experiences.</p>
-                <h2>Our Mission</h2>
-                <p>We aim to provide affordable and memorable experiences to our dear clients.</p>
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="CODE 2 FINAL PROJECT.html">HOME</a>
+                <a href="#about-us">ABOUT US</a>
+                <a href="Product Listing for Final Project.html">PRODUCT LISTING</a>
+                <a href="Featured Products Final Project code.html">FEATURED PRODUCTS</a>
+                <a href="Gallery Final Project coding.html">GALLERY</a>
+                <a href="FAQs Final Project code.html">FAQs</a>
             </div>
-        </section>
+        </nav>
+    </header>
+
+    <div class="hero-container">
+        <div class="hero-image">
+            <img src="https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/488657665_1125597509577540_8722374392809524007_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHuFQTwYRAR1m2ro0GXTP3zY_22JIG0-FJj_bYkgbT4Un_GtStCBJJeIVVAzOyhJy3VZUaOF9qmImBOJjTyMSKb&_nc_ohc=xHQdcvRcte0Q7kNvwGtV9L4&_nc_oc=AdlRjCSUQA8ldQr3N-9xGZXaxmZnFvCOskFX59U1PCje_2ySJ1fTJOJCIUzNbNdq3BA&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&_nc_gid=yBan3fnh7Ec9JChozgzQZA&oh=00_AfK2Jqta2yArOR5YHxOn37y3Vb-BfhgiPuueh7ZEjnR7vA&oe=681FEDE0" alt="Hero Image">
+        </div>
     </div>
+
+    
+    <section id="about-us">
+        <div class="mission-content">
+            <p>Salangi Tamu Resort and Events offers a serene escape, perfect for relaxation and celebrations. Surrounded by natural beauty, it blends comfort with charm to create unforgettable experiences.</p>
+            <h2>Our Mission</h2>
+            <p>We aim to provide affordable and memorable experiences to our dear clients.</p>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-contact">
                     <p>LOCATION: Orchard Village, Ayala, Magalang, Pampanga</p>
-                    <p>EMAIL: <a href="mailto:angel.tpmsolutions@gmail.com">angel.tpmsolutions@gmail.com</a></p>
+                    <p>EMAIL: <a href="angel.tpmsolutions@gmail.com">angel.tpmsolutions@gmail.com</a></p>
                     <p>PHONE: 0908 875 0812</p>
                 </div>
 
@@ -398,26 +374,12 @@ footer a:hover {
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
     <script>
-        const slides = document.querySelectorAll('.hero-image img');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        showSlide(currentSlide);
-        setInterval(nextSlide, 3500); 
-    </script>
-
-    <button id="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑ Top</button>
-
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    document.querySelector('.navbar').classList.toggle('active');
+});
+        </script>
 </body>
 </html>
