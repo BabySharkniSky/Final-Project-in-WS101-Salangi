@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salangi Tamu Resort and Events</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Cormorant+Garamond:wght@400&family=Inter:wght@200&display=swap">
+    <style>
+        :root {
+            --primary-color: #1b3228;
+            --secondary-color: #35341e;
+            --third-color:rgba(8, 77, 19, 0.73);
+            --fourth-color: rgba(204, 180, 44, 0.904);
+            --accent-color: #343a40;
+            --footer-color: #bbb89c;
+            --footer-text-color: #353431;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #d6d5ce, #c2bca7, #bebcb5);
+            font-family: "Cormorant Garamond", serif;
+            letter-spacing: 0.18px;
+        }
+
+        h1, h2, h3 {
+            font-family: "Cinzel", serif;
+        }
+
+        .navbar, .mission-content p {
+            font-family: "Inter", sans-serif;
+        }
+
+        .main-container {
+            max-width: 1425px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .logo-container img {
+            width: 230px;
+            height: auto;
+            object-fit: cover;   
+            border-radius: 70%;  
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+            width: 100%;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar a {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar a:hover {
+            color: var(--fourth-color);
+            transform: scale(1.08); 
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+        }
+
+        .mobile-menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            transition: all 0.3s linear;
+        }
+
+        .hero-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 600px;
+            margin-top: -70px; 
+        }
+
+        .hero-image img {
+            width: 1300px;
+            height: 100%;
+            object-fit: cover;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        footer {
+            background-color: var(--footer-color);
+            color: var(--footer-text-color);
+            padding: 25px;
+            text-align: center;
+            font-size: 18px;
+            font-family: "Cormorant Garamond", serif;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+
+        .footer-contact {
+            text-align: left;
+            width: 40%;
+            padding-left: 50px;
+        }
+
+        .footer-social {
+            text-align: left;
+            width: 35%;
+            padding-right: 50px;
+        }
+
+        .footer-extra {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        
+        footer a {
+            color: inherit; 
+            text-decoration: none; 
+        }
+
+        footer a:hover {
+            text-decoration: none; 
+        }
+
+        .section-divider {
+            border: none;
+            height: 3px; 
+            width: 100%; 
+            background-color: var(--secondary-color);
+            margin: 30px 0 40px 0; 
+        }
+
+        .featured-products {
+            max-width: 1000px; 
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 29px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #383333;
+        }
+
+        .product-wrapper {
+            background: #b9b4a0; 
+            padding: 20px;
+            width: 980px;
+            height: 250px;
+            display: flex;
+            box-shadow: 0 4px 8px rgba(58, 57, 56, 0.582); 
+            margin: 30px 0; 
+        }
+
+        .product-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .product-image img {
+            width: 340px;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-description {
+            max-width: 650px; 
+            background: #10193A; 
+            padding: 18px; 
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .product-description h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #c7b848;
+            line-height: 1.3;
+        }
+
+        .product-description p {
+            font-size: 20px;
+            color: #e9e8e6;
+        }
+
+        @media screen and (max-width: 1440px) {
+            .main-container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .hero-image img {
+                width: 100%;
+            }
+
+            .featured-products {
+                max-width: 90%;
+            }
+
+            .product-wrapper {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .navbar {
+                gap: 15px;
+            }
+
+            .nav-left {
+                gap: 15px;
+            }
+
+            .navbar a {
+                font-size: 14px;
+            }
+
+            .logo-container img {
+                width: 180px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .navbar {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 20px;
+            }
+
+            .navbar.active {
+                display: block;
+            }
+
+            .nav-left {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .logo-container {
+                order: -1;
+                margin-bottom: 20px;
+            }
+
+            .hero-container {
+                height: auto;
+                margin-top: 0;
+            }
+
+            .product-wrapper {
+                padding: 15px;
+            }
+
+            .product-container {
+                flex-direction: column;
+            }
+
+            .product-description {
+                padding: 15px;
+            }
+
+            .product-description h3 {
+                font-size: 22px;
+            }
+
+            .product-description p {
+                font-size: 18px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-contact, .footer-social {
+                width: 100%;
+                padding: 0;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+
+            .logo-container img {
+                width: 150px;
+            }
+
+            .navbar a {
+                font-size: 13px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .product-description h3 {
+                font-size: 20px;
+            }
+
+            .product-description p {
+                font-size: 16px;
+            }
+
+            footer {
+                font-size: 16px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo-container">
+            <img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/437759101_872133544923939_9170558884896906801_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHH2jykKzm31eGmsjmHjAmQYefOXS-YsRhh585dL5ixGPK1the2a0P7i4AyrpCNJ_ifNiXvBcUezsLpYg77Jjlk&_nc_ohc=6SmDnF8DyW0Q7kNvwGiLgBU&_nc_oc=AdleQjXw1B5WycnMLivqsckSwBYsM7iZQlTaAP943IdZZlWLq1ZmqqLabvNLeKF1YSQ&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=SpdcyHaZVMb9GUXm5wQGWA&oh=00_AfJeeTaupAdooj1SVnwup13bWOJdIL77CGe_FBBUKtQZ_w&oe=68268CAB
+            " alt="Salangi Tamu Logo">
+        </div>
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="Salangi Resort.html">HOME</a>
+                <a href="#about-us">ABOUT US</a>
+                <a href="Product Listing for Final Project.html">PRODUCT LISTING</a>
+                <a href="Featured Products Final Project code.html">FEATURED PRODUCTS</a>
+                <a href="Gallery Final Project coding.html">GALLERY</a>
+                <a href="FAQs Final Project code.html">FAQs</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero-container">
+        <div class="hero-image">
+            <img src="https://scontent.fmnl33-1.fna.fbcdn.net/v/t1.15752-9/487432780_657782270307926_4249988273768005478_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHSIhVPz5mXYPG0xtnNtLgsZV5azcxwSIxlXlrNzHBIjIQ-4JJSYiRDE3pNlkEI3NJ8ou_VoUil5Hx5No8_KQ9K&_nc_ohc=__45IMMWZtkQ7kNvwHdzwCo&_nc_oc=Adlg5CoXOrOCzzxxjyU9D2IFqDc9Y1ELcvEYY0-nn1Xg3wnfrlx7g8UrJRSO3vrzQ2M&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl33-1.fna&oh=03_Q7cD2AHFEOlB9sP-yrjFIOoYtn9_bkmSybQcua8raPY_HltFzA&oe=682C99BF" alt="Hero Image">
+        </div>
+    </div>
+
+    <section class="featured-products">
+        <h2>Recreational Activities</h2>
+
+        <div class="product-wrapper">
+            <div class="product-container">
+                <div class="product-description">
+                    <h3>Swimming Pool with Kiddie Pool</h3>
+                    <p>Cool off in the crystal-clear waters of our thoughtfully designed pool, perfect for both relaxation and recreation. The kiddie pool offers a safe, joyful space for little ones to splash and play, surrounded by lush greenery and refined ambiance.</p>
+                </div>
+                <div class="product-image">
+                    <img src="https://scontent.fmnl33-2.fna.fbcdn.net/v/t39.30808-6/487704732_1122965706507387_3717287454921476655_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeELd1x_7fwNmZO8Md3692fOY1GUrNsBvW1jUZSs2wG9bc39D4M-DdFDeuPf5CcIWO6-UA2CuhQtSvO4SmkGQu0b&_nc_ohc=VWzB19qUC6QQ7kNvwHzDuEH&_nc_oc=Adm3-VLjMQZI98kTimbp9UhEMCOEzq8T5vIK3QKNjqhBW9EpPy4b_ekFkfc_VONrxgg&_nc_zt=23&_nc_ht=scontent.fmnl33-2.fna&_nc_gid=V8urGZjHDkfeDn-QNum7xw&oh=00_AfIu7NVhhdb68s1jhtU2CitorbiNpf2emxiEP6BFkNImcQ&oe=6826A15C" alt="Swimming Pool">
+                </div>
+            </div>
+        </div>
+
+        <div class="product-wrapper">
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="https://www.breakmystyle.com/wp-content/uploads/2015/03/sheridan-beach-resort-and-spa-i-22.jpg" alt="ATV Rides">
+                </div>
+                <div class="product-description">
+                    <h3>ATV Rides</h3>
+                    <p>Enjoy an exhilarating off-road adventure, where scenic trails and rugged terrains bring excitement at every turn. Designed for thrill-seekers, our ATV rides offer the perfect blend of adrenaline and exploration in a breathtaking setting.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-wrapper">
+            <div class="product-container">
+                <div class="product-description">
+                    <h3>Jacuzzi</h3>
+                    <p>Unwind in the luxurious embrace of warm, bubbling waters, letting stress melt away in an atmosphere of pure relaxation. Designed for comfort and elegance, our Jacuzzi invites you to enjoy a tranquil escape in an intimate and serene space.</p>
+                </div>
+                <div class="product-image">
+                    <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/487858304_1121868596617098_1096090542507594012_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHeamLgbZ9-sSX6doHKbA3X9ImFC4cNDFL0iYULhw0MUll434qeu1W-M6tQTTT72hvtpDuQR0akUk1gu7nUTzBF&_nc_ohc=qs97JuFRFcoQ7kNvwGpdI3m&_nc_oc=AdmkVmWV5ZYX05kKv8rGcJdIYHqOccDgDSGVVuIAwgtHouFdo98jI2GkbLVR4uRRhcQ&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=Of01mZ6WLLaCvFCcw2_1Pg&oh=00_AfKQHvOb5VaMpkfVzZWDMW4bQV8UhQsNgnoRMNfbdTElWQ&oe=6826894E" alt="Jacuzzi">
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <h2>Events & Special Occasions</h2>
+
+        <div class="product-wrapper">
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-6/488267647_1124482589689032_1414301613326009421_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG7yvriHW4FGSBpTRTL8mJTewNen2XPCu57A16fZc8K7tgV0coxj13qDe71xrhz5x8T8vzHVvNs2GXO7ObU_8k5&_nc_ohc=V6HPOFZX6bQQ7kNvwF-kKZS&_nc_oc=Admscrf71C99bEd6C7wJ3D0P_c0q3Jnb1uK1yrq1Pv4vt5L_Spl_kmc3EC1lrgafCkg&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=j7QWHc3jAtk_hhhhmUkvvg&oh=00_AfIb-TpfpVE3BIWyl8F_XXhEaUry1Z51k-Qv3jAuS81Xiw&oe=682696BB" alt="ATV Rides">
+                </div>
+                <div class="product-description">
+                    <h3>Weddings & Romantic</h3>
+                    <p>Celebrate love in an enchanting setting, where every detail is crafted to create an unforgettable experience. From intimate beachfront vows to grand receptions under the stars, our venue offers the perfect backdrop for romantic elegance and cherished memories.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-wrapper">
+            <div class="product-container">
+                <div class="product-description">
+                    <h3>Birthday & Anniversary Celebrations</h3>
+                    <p>Mark your milestone with warmth, joy, and sophistication in a setting designed for unforgettable moments. Whether it's a lively birthday celebration or an intimate anniversary, our stunning venue and dedicated service ensure a seamless and elegant experience.</p>
+                </div>
+                <div class="product-image">
+                    <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-6/487542882_1124608123009812_4817143276759454403_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH0nqoOWvMDThi__GtGRJZ-FHO__FRu25cUc7_8VG7bly7J22Us5CIhB-xGjID0SE62HNwyHkZFzNpgoCKjHJE0&_nc_ohc=q6VaroKbF9QQ7kNvwGSSM9H&_nc_oc=AdkvnMPQ-MDw0zojEatji8HpKFkfdjQUPUVplJFoN5EvBI4EW-zRxWA4eFzj06oexds&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=MIuNfKH0b1ow6_N2F0H5iA&oh=00_AfIggNNVepIg1TYpTDIhytLYioZefeb1ABqT_0zODPa7HA&oe=68269B9B" alt="Jacuzzi">
+                </div>
+            </div>
+        </div>
+
+        <div class="product-wrapper">
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/488967116_1128297655974192_1096844208630180185_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeESZKm9SeiZ3b99rXIwW7XinUw84HFxY4qdTDzgcXFjio3JJufvSFuoolq_uvlY_fxihaJfGRTawRVXpQQMsyFa&_nc_ohc=D0z5BZjAd14Q7kNvwFp3UaP&_nc_oc=AdlJXmsWBCO_OVJlu07Hd40D7XCs2SqSiFMGE5Pg20iLbC0M6pQfYyUZIHOPTnCqMsk&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=Ztshsh2WaqlhiWZV7wQ4vw&oh=00_AfI4OEXr4hxmENaX-ievrZkD4WwO64gPSzuPpx8mLljL5g&oe=6826A61A" alt="ATV Rides">
+                </div>
+                <div class="product-description">
+                    <h3>Team-Building Activities</h3>
+                    <p>Strengthen bonds in a refreshing space where engaging activities foster teamwork and creativity. Experience challenges that encourage collaboration and meaningful connections. Every activity blends relaxation and adventure to bring people together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-contact">
+                    <p>LOCATION: Orchard Village, Ayala, Magalang, Pampanga</p>
+                    <p>EMAIL: <a href="mailto:angel.tpmsolutions@gmail.com">angel.tpmsolutions@gmail.com</a></p>
+                    <p>PHONE: 0908 875 0812</p>
+                </div>
+
+                <div class="footer-social">
+                    <p>CONNECT WITH US:</p>
+                    <p>FACEBOOK: <a href="https://www.facebook.com/salangitamu" target="_blank">https://www.facebook.com/salangitamu</a></p>
+                    <p>TIKTOK: <a href="https://www.tiktok.com/@salangi50" target="_blank">https://www.tiktok.com/@salangi50</a></p>
+                </div>
+            </div>
+
+            <div class="footer-extra">
+                <p>© 2025 Salangi Tamu Resort and Events. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

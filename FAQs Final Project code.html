@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs</title>
+  <link href="FAQs.html" rel="stylesheet" />
+  <style>
+    :root{
+      --primary-color: #1b3228;
+            --secondary-color: #ebe9d9;
+            --third-color: #063658;
+            --accent-color: #343a40;
+            --footer-color: #061d2c;
+            --footer-text-color: #f4f1eb;
+            
+    }
+    body {
+      font-family: "Cormorant Garamond", serif;
+      background-color: #f0f5f7;
+      letter-spacing: 0.18%;
+
+    }
+    @media screen and (max-width: 1440px) {}
+    .main-container {
+            max-width: 1425px;
+            margin: 0 auto;
+            overflow: hidden;
+       
+        }
+        @media screen and (max-width: 768px) {}
+        header {
+          display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .navbar, .mission-content p {
+            font-family: "Inter", sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .navbar a {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar a:hover {
+            color: var(--fourth-color);
+            transform: scale(1.08); 
+        }
+
+
+    .faq-container {
+      background: white;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .faq-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      border-top: 1px solid #ccc;
+    }
+
+    .faq-question {
+      padding: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: white;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px 15px;
+      color: #333;
+    }
+
+    .active + .faq-answer {
+      display: block;
+    }
+
+    
+    footer {
+      background-color: var(--footer-color);
+      color: var(--footer-text-color);
+      padding: 25px;
+      text-align: center;
+      font-size: 18px;
+      font-family: "Cormorant Garamond", serif;
+      border-top: 3px solid var(--accent-color);
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+
+    .footer-contact {
+      text-align: left;
+      width: 40%;
+      padding-left: 50px;
+      margin: 6px 0;
+    }
+
+    .footer-social {
+      text-align: left;
+      width: 40%;
+      padding-right: 50px;
+      margin: 6px 0;
+    }
+
+    .footer-extra {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    footer a {
+      color: inherit; 
+      text-decoration: none; 
+    }
+  
+    footer a:hover {
+      text-decoration: underline;
+      color: #ffd700;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    footer{
+      border-top: 3px solid var(--accent-color);
+      font-size: 17px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-contact p, .footer-social p {
+      margin: 6px 0;
+    }
+
+    footer a {
+      font-weight: 500;
+      color:white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #d6eb1f;
+      text-decoration: underline;
+    } 
+
+  </style>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <nav class="navbar">
+                <div class="nav-left">
+                    <a href="Salangi Resort.html">Home</a>
+                    </div>
+        
+                    <div class="nav-right">
+                        <a href="FAQs Final Project code.html">FAQs</a>
+                </div>
+            </nav>
+        </header>
+  <div class="faq-container">
+    <div class="faq-title">FAQs</div>
+
+    <div class="faq-item">
+      <div class="faq-question">What is your booking policy?</div>
+      <div class="faq-answer">
+        We require a 500 non-refundable deposit to reserve your preferred date. The remaining balance and security deposit must be settled upon check-in, either in cash or via accepted payment method.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I modify or cancel my booking?</div>
+      <div class="faq-answer">
+        You may move your booking date up to 3 times before it is forfeited--just message us at least 3 days before your booked date. . Cancellations are subject to the non-refundable policy.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What payment options are available?</div>
+      <div class="faq-answer">
+        We accept Cash, GCash, and Bank transfers.
+      </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Check-in/ Check-out Time</div>
+        <div class="faq-answer">
+            Check in is 2PM and check out is 11AM the following day.
+        </div>
+      </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is there Wi-Fi at the resort?</div>
+      <div class="faq-answer">
+        Yes, free Wi-Fi is available in all common areas.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do you allow pets?</div>
+      <div class="faq-answer">
+        Yes, pets are allowed, but they are not allowed in the pool and bedding.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-contact">
+                <p>LOCATION: Orchard Village, Ayala, Magalang, Pampanga</p>
+                <p>EMAIL: <a href="mailto:angel.tpmsolutions@gmail.com">angel.tpmsolutions@gmail.com</a></p>
+                <p>PHONE: 0908 875 0812</p>
+            </div>
+
+            <div class="footer-social">
+                <p>CONNECT WITH US:</p>
+                <p>FACEBOOK: <a href="https://www.facebook.com/salangitamu" target="_blank">https://www.facebook.com/salangitamu</a></p>
+                <p>TIKTOK: <a href="https://www.tiktok.com/@salangi50" target="_blank">https://www.tiktok.com/@salangi50</a></p>
+            </div>
+        </div>
+
+        <div class="footer-extra">
+            <p>© 2025 Salangi Tamu Resort and Events. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>  
+
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
