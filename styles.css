@@ -80,7 +80,7 @@ header {
 }
 
 .logo-container img {
-    width: 100px;
+    width: 230px;
     height: auto;
     object-fit: cover;   
     border-radius: 70%;  
@@ -232,7 +232,7 @@ footer a:hover {
     }
 
     .logo-container img {
-        width: 180px;
+        width: 100px;
     }
 }
 
